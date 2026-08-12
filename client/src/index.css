@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------
+   Tool2U — Enhanced Digital Workbench Design System
+   Neo-Brutalist Utility: Swiss clarity + tactile depth
+   Space Grotesk / Inter / JetBrains Mono
+------------------------------------------------------------------- */
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Core palette */
+  --color-paper: #f7f5f0;
+  --color-paper-dim: #efece4;
+  --color-ink: #1b1f23;
+  --color-ink-soft: #454b52;
+
+  --color-teal-950: #0b1f1c;
+  --color-teal-900: #123330;
+  --color-teal-800: #1b4b43;
+  --color-teal-700: #235f54;
+  --color-teal-600: #2d7367;
+
+  --color-mint-400: #7fe8c9;
+  --color-mint-500: #4fd1ae;
+  --color-mint-600: #33b291;
+
+  --color-amber-400: #f6bd5e;
+  --color-amber-500: #f2a93b;
+  --color-amber-600: #d98f22;
+
+  /* Category accents */
+  --color-cat-students: #4fd1ae;
+  --color-cat-developers: #f2a93b;
+  --color-cat-productivity: #5b8def;
+  --color-cat-utilities: #e8735c;
+
+  /* Dark surface */
+  --color-surface-dark: #101615;
+  --color-surface-dark-raised: #17201e;
+
+  --radius-card: 1.1rem;
+
+  /* Animation tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark body {
+    background-color: var(--color-surface-dark);
+    color: #eef2f1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  /* Visible keyboard focus everywhere */
+  :focus-visible {
+    outline: 2px solid var(--color-mint-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-mint-400);
+    color: var(--color-teal-950);
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-paper);
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: var(--color-surface-dark);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-teal-700);
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  /* Signature graph-paper texture used sparingly (hero / section backdrops) */
+  .grid-paper {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--color-ink) 5%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--color-ink) 5%, transparent) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .dark .grid-paper {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, #ffffff 6%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, #ffffff 6%, transparent) 1px, transparent 1px);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Shimmer loading animation */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-paper-dim) 25%,
+      var(--color-paper) 50%,
+      var(--color-paper-dim) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  .dark .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--color-surface-dark-raised) 25%,
+      var(--color-surface-dark) 50%,
+      var(--color-surface-dark-raised) 75%
+    );
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Fade-in animation */
+  .fade-in {
+    animation: fadeIn 0.3s var(--ease-out) both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Slide-up animation */
+  .slide-up {
+    animation: slideUp 0.4s var(--ease-out) both;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scale-in animation */
+  .scale-in {
+    animation: scaleIn 0.25s var(--ease-out) both;
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Animated gradient text — reserved for hero-level headline emphasis */
+  .text-gradient-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--color-teal-700),
+      var(--color-mint-600) 25%,
+      var(--color-amber-500) 50%,
+      var(--color-mint-600) 75%,
+      var(--color-teal-700)
+    );
+    background-size: 300% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: gradientShimmer 7s linear infinite;
+  }
+
+  .dark .text-gradient-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--color-mint-400),
+      var(--color-mint-500) 25%,
+      var(--color-amber-400) 50%,
+      var(--color-mint-500) 75%,
+      var(--color-mint-400)
+    );
+  }
+
+  @keyframes gradientShimmer {
+    to { background-position: -300% center; }
+  }
+
+  /* Infinite horizontal marquee — CSS-driven (not Framer) so it can
+     pause on hover for free via animation-play-state, no JS/state needed. */
+  .marquee-track {
+    animation: marqueeScroll 34s linear infinite;
+  }
+
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marqueeScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .text-gradient-shimmer {
+    background-position: 0 center;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
