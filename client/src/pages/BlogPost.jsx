@@ -214,7 +214,46 @@ export default function BlogPost() {
               animate="visible"
               className="space-y-8"
             >
-              <div className="prose prose-lg dark:prose-invert max-w-none text-ink-soft dark:text-white/80 leading-relaxed font-sans">
+              <div
+                className="
+                  prose prose-lg dark:prose-invert max-w-none font-sans
+                  text-ink-soft dark:text-white/80 leading-relaxed
+
+                  prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight
+                  prose-headings:text-ink dark:prose-headings:text-white
+
+                  prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:mt-14 prose-h2:mb-5
+                  prose-h2:pb-3 prose-h2:border-b prose-h2:border-ink/10 dark:prose-h2:border-white/10
+
+                  prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-3
+                  prose-h3:text-teal-800 dark:prose-h3:text-mint-400
+
+                  prose-p:my-5 prose-p:leading-[1.8]
+
+                  prose-a:text-teal-700 dark:prose-a:text-mint-400 prose-a:font-semibold
+                  prose-a:no-underline prose-a:underline-offset-4 prose-a:decoration-2
+                  prose-a:decoration-teal-500/40 hover:prose-a:underline
+
+                  prose-strong:text-ink dark:prose-strong:text-white prose-strong:font-bold
+
+                  prose-ul:my-6 prose-ol:my-6 prose-li:my-2
+                  prose-li:marker:text-teal-600 dark:prose-li:marker:text-mint-400
+
+                  prose-blockquote:border-l-4 prose-blockquote:border-teal-500
+                  dark:prose-blockquote:border-mint-500 prose-blockquote:bg-teal-50/60
+                  dark:prose-blockquote:bg-white/5 prose-blockquote:py-1 prose-blockquote:px-6
+                  prose-blockquote:rounded-r-xl prose-blockquote:not-italic
+                  prose-blockquote:font-medium prose-blockquote:text-ink dark:prose-blockquote:text-white/90
+
+                  prose-code:text-teal-700 dark:prose-code:text-mint-400 prose-code:bg-teal-50
+                  dark:prose-code:bg-white/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md
+                  prose-code:font-mono prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+
+                  prose-img:rounded-2xl prose-img:shadow-lg prose-img:border prose-img:border-ink/10 dark:prose-img:border-white/10
+
+                  prose-hr:border-ink/10 dark:prose-hr:border-white/10
+                "
+              >
                 {post.content ? (
                   <div dangerouslySetInnerHTML={{ __html: post.content }} />
                 ) : (

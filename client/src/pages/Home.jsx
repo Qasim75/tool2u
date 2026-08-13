@@ -617,12 +617,20 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link to="/tools">
-                <Button size="lg" className="bg-white text-teal-800 hover:bg-white/90 dark:bg-teal-950 dark:text-mint-400 dark:hover:bg-teal-950/90 shadow-md transition-transform hover:scale-105">
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="!bg-transparent !text-black border border-black/25 hover:!bg-teal-700 hover:!text-black hover:!border-teal-700 shadow-none transition-all duration-200 hover:scale-105"
+                >
                   Explore all tools
                 </Button>
               </Link>
               <Link to="/blog">
-                <Button size="lg" variant="secondary" className="border-white/20 text-white hover:bg-white/10 dark:border-teal-950/20 dark:text-teal-950 dark:hover:bg-teal-950/10 transition-transform hover:scale-105">
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="!bg-transparent !text-black border border-black/25 hover:!bg-teal-700 hover:!text-black hover:!border-teal-700 shadow-none transition-all duration-200 hover:scale-105"
+                >
                   Read the blog
                 </Button>
               </Link>
