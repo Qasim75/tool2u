@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1b4b43" />
+    <!-- Primary SEO -->
+    <title>Tool2U — Useful Tools. Just for You.</title>
+    <meta name="description" content="Tool2U is a free collection of fast, privacy-friendly browser tools for students, developers, professionals and creators: CGPA calculator, QR code generator, WhatsApp link generator, word counter, JSON converters, image tools, SEO utilities, calculators and more." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tool2u.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tool2U" />
+    <meta property="og:title" content="Tool2U — Useful Tools. Just for You." />
+    <meta property="og:description" content="200+ fast, free, no-signup browser tools for students, developers, professionals and creators: CGPA calculator, QR generator, WhatsApp link generator, word counter, JSON converters, image tools and SEO utilities." />
+    <meta property="og:url" content="https://tool2u.io/" />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tool2U — Useful Tools. Just for You." />
+    <meta name="twitter:description" content="Fast, free, no-signup browser tools for students, developers, professionals and everyday tasks." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" 
+      rel="stylesheet" 
+      media="print" 
+      onload="this.media='all'" 
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Structured data: Organization (site-wide, page-specific schema is injected per-route) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tool2U",
+        "url": "https://tool2u.io",
+        "logo": "https://tool2u.io/apple-touch-icon.png",
+        "description": "Free, privacy-friendly browser tools for students, developers, professionals, creators and everyday tasks."
+      }
+    </script>
+      <script>
+        (function () {
+          // Analytics endpoint/website-id are injected at build time via VITE_ANALYTICS_ENDPOINT
+          // and VITE_ANALYTICS_WEBSITE_ID env vars. When those aren't set (e.g. local dev),
+          // Vite leaves the raw "%VAR%" placeholders in place, so we skip loading the script
+          // instead of requesting a broken URL.
+          var endpoint = "%VITE_ANALYTICS_ENDPOINT%";
+          var websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
+          if (endpoint && websiteId && endpoint.indexOf("%") === -1 && websiteId.indexOf("%") === -1) {
+            var s = document.createElement("script");
+            s.defer = true;
+            s.src = endpoint + "/umami";
+            s.setAttribute("data-website-id", websiteId);
+            document.head.appendChild(s);
+          }
+        })();
+      </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

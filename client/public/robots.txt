@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tool2u.io/sitemap.xml
